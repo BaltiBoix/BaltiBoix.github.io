@@ -15,11 +15,11 @@
   
   Los gráficos interactivos para `Stacked Bar Graphs` y `Flow Map` se ha en desarrollado en `Tableau` y el `Hyperbolic Trees` con el API de `Graphviz` para Python en un Jupyter Notebook. Este último se ha incorporado a `Tableau` en forma de imagen estática. El Notebook utilizado:  
   
-  >  [cores.ipynb](./cores.ipynb)    
+  >  [cores.ipynb](./cores.html)    
  
  Los ficheros del PEC2 en github:  
  
- >  [github del PEC2](https://github.com/BaltiBoix/BaltiBoix.github.io/edit/master/Visual_PEC2/cores.html)
+ >  [github del PEC2](https://github.com/BaltiBoix/BaltiBoix.github.io/edit/master/Visual_PEC2)
   
   
   
