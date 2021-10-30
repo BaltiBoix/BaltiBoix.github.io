@@ -19,7 +19,7 @@
  
  Los ficheros del PEC2 en github:  
  
- >  [github del PEC2](https://github.com/BaltiBoix/BaltiBoix.github.io/edit/master/Visual_PEC2)
+ >  [github del PEC2](https://github.com/BaltiBoix/BaltiBoix.github.io/edit/master/Visual_PEC2/cores.html)
   
   
   
