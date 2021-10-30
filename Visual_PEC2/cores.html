@@ -13074,9 +13074,16 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="M2.859---Visualizaci&#243;n-de-datos-aula-2">M2.859 - Visualizaci&#243;n de datos aula 2<a class="anchor-link" href="#M2.859---Visualizaci&#243;n-de-datos-aula-2">&#182;</a></h1><h2 id="A5:-Estudio-de-t&#233;cnicas-de-visualizaci&#243;n-de-datos-(PEC2)">A5: Estudio de t&#233;cnicas de visualizaci&#243;n de datos (PEC2)<a class="anchor-link" href="#A5:-Estudio-de-t&#233;cnicas-de-visualizaci&#243;n-de-datos-(PEC2)">&#182;</a></h2><h3 id="Hyperbolic-Trees">Hyperbolic Trees<a class="anchor-link" href="#Hyperbolic-Trees">&#182;</a></h3>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">graphviz</span>
@@ -13091,7 +13098,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cores.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="s1">&#39;#N/D&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;ANSI&#39;</span><span class="p">)</span>
@@ -13109,7 +13116,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13266,11 +13273,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_0</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">Valor</span><span class="o">&gt;</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Continente&#39;</span><span class="p">,</span> <span class="s1">&#39;País&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">Valor</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">df_0</span><span class="p">[</span><span class="n">df_0</span><span class="o">.</span><span class="n">Continente</span><span class="o">==</span><span class="s1">&#39;África&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">País</span>
+<span class="n">df_0</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13283,25 +13290,68 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[3]:</div>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>41               Angola
-42              Argelia
-43                Benin
-44              Camerún
-45                Congo
-46               Egipto
-47                Gabón
-48    Guinea Ecuatorial
-49                Libia
-50              Nigeria
-51         Otros África
-52                Túnez
-Name: País, dtype: object</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Continente</th>
+      <th>País</th>
+      <th>Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>América</td>
+      <td>Argentina</td>
+      <td>546.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>América</td>
+      <td>Brasil</td>
+      <td>23972.000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>América</td>
+      <td>Canadá</td>
+      <td>4999.000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>América</td>
+      <td>Colombia</td>
+      <td>20415.181</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>América</td>
+      <td>Cuba</td>
+      <td>642.033</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -13312,7 +13362,7 @@ Name: País, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cores</span> <span class="o">=</span> <span class="n">graphviz</span><span class="o">.</span><span class="n">Digraph</span><span class="p">(</span><span class="s1">&#39;cores&#39;</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="s1">&#39;Importación de Crudo en España (1968-2021)&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s1">&#39;twopi&#39;</span><span class="p">,</span> 
@@ -13343,7 +13393,7 @@ Name: País, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[98]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -14079,7 +14129,7 @@ Name: País, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cores</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
@@ -14095,7 +14145,7 @@ Name: País, dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[99]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
