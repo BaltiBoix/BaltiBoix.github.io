@@ -22,14 +22,15 @@ d3.js:<br>
 <a href="https://baltiboix.github.io/Visual_PRAC/ccaa.html">Resultados PISA 2018 por Comunidad Autónoma</a>
 
 5.	[20%] **Análisis de los elementos visuales usados: tipo de gráficos, interacción, colores, textos...**<br>
-Se han utilizado los siguientes elementos visuales:<br>
+Se han utilizado los siguientes elementos visuales en Tableau:<br>
 -	Gráficos de forma utilizando iconos (Iconos de Gráficos - Iconos gratuitos de 132,939 (flaticon.es)) de distinto tamaño para resaltar la diferencia en desempeño entre chicos y chicas.<br>
 -	Gráficos de mapa (choropleth map) con los resultados por CCAA y selección interactiva de la materia a visualizar. Para mostrar la Islas Canarias al lado de la península se han superpuesto dos mapas.
 -	Gráficos de barra de error para mostrar la diferencia de puntuaciones entre sexos por CCAA.<br>
 -	Gráficos de círculos con los resultados según formación de la madre y propiedad del colegio (Público o Privado).<br>
--	Texto e imágenes.<br>
+-	Texto e imágenes.<br><br>
 La navegación entre gráficos se realiza con puntos de historia con un texto explicativo.<br>
-La paleta de colores utilizada ha sido Tableau Classic 10. Se ha comprobado la coherencia de colores entre gráficos.
+La paleta de colores utilizada ha sido Tableau Classic 10. Se ha comprobado la coherencia de colores entre gráficos.<br><br>
+En d3.js se ha programado un script que dibuja lollipop horizontal con botones tipo radio y tooltips interactivos. 
 
 6.	[20%] **Reflexiones finales sobre que explica y que aporta la visualización creada y qué formas de captar la atención del usuario se han utilizado.**<br>
 La visualización describe el resultado de los tests PISA de los chicos y chicas de 15 años en España en el año 2018 e investiga la diferencia entre sexos geográficamente, según el tipo de escuela y la formación de la madre.<br>
