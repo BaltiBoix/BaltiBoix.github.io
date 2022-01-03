@@ -96,7 +96,7 @@
     <script>
 
         // set the dimensions and margins of the graph
-        const margin = { top: 30, right: 50, bottom: 30, left: 200 },
+        const margin = { top: 30, right: 50, bottom: 50, left: 200 },
             width0 = 650,
             height0 = 400,
             width = width0 - margin.left - margin.right,
@@ -123,6 +123,15 @@
             .attr("fill", "blue")
             .attr("class", "title")
             .text("Puntuaciones")
+
+        svg.append("text")
+            //.attr("transform", "translate(80,0)")
+            .attr("x", 0)
+            .attr("y", height+35)
+            .attr("font-size", "14px")
+            .attr("fill", "blue")
+            .attr("class", "footnote")
+            .html("<a href='https://www.oecd.org/pisa/39730818.pdf'>* Criterios de evaluación del estudio PISA<a>")
 
 
         // Initialize the Y axis
@@ -154,20 +163,6 @@
             .style("padding", "5px")
             .html("<p>Hello</p>");
 
-        function getOffset(element) {
-            var bound = element.getBoundingClientRect();
-            var html = document.documentElement;
-
-            return {
-                top: bound.top + window.pageYOffset - html.clientTop,
-                left: bound.left + window.pageXOffset - html.clientLeft,
-                width: bound.width,
-                height: bound.height
-            };
-        }
-
-
-
 
         // A function that create / update the plot for a given variable:
         function update() {
@@ -175,6 +170,21 @@
             let subject = d3.select('input[name="subject"]:checked').node().value;
             let diff = d3.select('input[name="diff"]:checked').node().value;
             let selectedVar = diff + "_" + subject;
+            let serror = "";
+            switch (diff){
+                case "MEAN":
+                    serror = "SEMEAN_" + subject;
+                    break;
+                case "MEANW":
+                    serror = "SEW_" + subject;
+                    break;
+                case "MEANM":
+                    serror = "SEM_" + subject;
+                    break;
+                case "MEANDIFF":
+                    serror = "SE_" + subject;
+                    break;
+            }
 
             // Parse the Data
             d3.csv("ccaa.csv").then(function (data) {
@@ -212,73 +222,73 @@
 
                 // variable u: map data to existing circle
                 const j = svg.selectAll(".myLine")
-                    .data(data)
+                    .data(data);
                 let colorCircle = "#69b3a2";
-                let titleText = "Puntuaciones"
+                let titleText = "Puntuaciones";
                 switch (selectedVar) {
                     case "MEAN_read":
                         colorCircle = "DarkGreen";
-                        titleText = "Lectura"
+                        titleText = "Lectura";
                         break;
                     case "MEAN_math":
                         colorCircle = "DarkRed";
-                        titleText = "Matemáticas"
+                        titleText = "Matemáticas";
                         break;
                     case "MEAN_science":
                         colorCircle = "DarkBlue";
-                        titleText = "Ciencias"
+                        titleText = "Ciencias";
                         break;
                     case "MEAN_gcomp":
                         colorCircle = "Olive";
-                        titleText = "Competencias Globales"
+                        titleText = "Competencias Globales";
                         break;
                     case "MEANW_read":
                         colorCircle = "DarkGreen";
-                        titleText = "Lectura Mujeres"
+                        titleText = "Lectura Mujeres";
                         break;
                     case "MEANW_math":
                         colorCircle = "DarkRed";
-                        titleText = "Matemáticas Mujeres"
+                        titleText = "Matemáticas Mujeres";
                         break;
                     case "MEANW_science":
                         colorCircle = "DarkBlue";
-                        titleText = "Ciencias Mujeres"
+                        titleText = "Ciencias Mujeres";
                         break;
                     case "MEANW_gcomp":
                         colorCircle = "Olive";
-                        titleText = "Competencias Globales Mujeres"
+                        titleText = "Competencias Globales Mujeres";
                         break;
                     case "MEANM_read":
                         colorCircle = "DarkGreen";
-                        titleText = "Lectura Hombres"
+                        titleText = "Lectura Hombres";
                         break;
                     case "MEANM_math":
                         colorCircle = "DarkRed";
-                        titleText = "Matemáticas Hombres"
+                        titleText = "Matemáticas Hombres";
                         break;
                     case "MEANM_science":
                         colorCircle = "DarkBlue";
-                        titleText = "Ciencias Hombres"
+                        titleText = "Ciencias Hombres";
                         break;
                     case "MEANM_gcomp":
                         colorCircle = "Olive";
-                        titleText = "Competencias Globales Hombres"
+                        titleText = "Competencias Globales Hombres";
                         break;
                     case "MEANDIFF_read":
                         colorCircle = "DarkGreen";
-                        titleText = "Diferencia Lectura"
+                        titleText = "Diferencia Lectura";
                         break;
                     case "MEANDIFF_math":
                         colorCircle = "DarkRed";
-                        titleText = "Diferencia Matemáticas"
+                        titleText = "Diferencia Matemáticas";
                         break;
                     case "MEANDIFF_science":
                         colorCircle = "DarkBlue";
-                        titleText = "Diferencia Ciencias"
+                        titleText = "Diferencia Ciencias";
                         break;
                     case "MEANDIFF_gcomp":
                         colorCircle = "Olive";
-                        titleText = "Diferencia Competencias Globales"
+                        titleText = "Diferencia Competencias Globales";
                         break;
 
 
@@ -316,6 +326,7 @@
                     .attr("fill", colorCircle)
                     .attr("x", function (d) { return d[selectedVar]; })
                     .attr("y", function (d) { return d.LITERAL; })
+                    .attr("e", function (d) { return d[serror]; });
 
                 svg.selectAll("circle")
                     .on("mouseover", function (d) {
@@ -323,13 +334,16 @@
                             .style("visibility", "visible")
                             .html(d3.select(this).attr("y") +
                                 "<br>" +
-                                parseFloat(d3.select(this).attr("x")).toFixed(1));
+                                subject + ": " +
+                                parseFloat(d3.select(this).attr("x")).toFixed(1) +
+                                "<br>Std Error: " +
+                                parseFloat(d3.select(this).attr("e")).toFixed(1));
                     })
                     .on("mousemove", function (d) {
                         let pos = d3.select(this).node().getBoundingClientRect();
                         return tooltip2
-                            .style("top", `${(window.pageYOffset + pos['y'] - 50)}px`)
-                            .style("left", `${pos['x'] - 70}px`)
+                            .style("top", `${(window.pageYOffset + pos['y'] - 75)}px`)
+                            .style("left", `${pos['x'] - 80}px`)
                     })
                     .on("mouseout", function (d) { return tooltip2.style("visibility", "hidden"); });
 
