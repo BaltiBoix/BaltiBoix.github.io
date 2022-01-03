@@ -66,9 +66,12 @@
             <input type="radio" name="subject" value="read" onclick="update()" checked> Lectura<br>
             <input type="radio" name="subject" value="math" onclick="update()"> Matemáticas<br>
             <input type="radio" name="subject" value="science" onclick="update()"> Ciencias<br>
+            <input type="radio" name="subject" value="gcomp" onclick="update()"> Competencias Globales<br>
         </div>
         <div class="column" id="diffButtons">
-            <input type="radio" name="diff" value="MEAN" onclick="update()" checked> Puntuación<br>
+            <input type="radio" name="diff" value="MEAN" onclick="update()" checked> Ambos<br>
+            <input type="radio" name="diff" value="MEANW" onclick="update()"> Mujeres<br>
+            <input type="radio" name="diff" value="MEANM" onclick="update()"> Hombres<br>
             <input type="radio" name="diff" value="MEANDIFF" onclick="update()"> Diferencia (Mujer-Hombre)<br>
         </div>
     </div>
@@ -114,7 +117,8 @@
 
         svg.append("text")
             .attr("transform", "translate(100,0)")
-            .attr("x", 120).attr("y", 0)
+            .attr("x", 25)
+            .attr("y", 0)
             .attr("font-size", "20px")
             .attr("fill", "blue")
             .attr("class", "title")
@@ -224,6 +228,42 @@
                         colorCircle = "DarkBlue";
                         titleText = "Ciencias"
                         break;
+                    case "MEAN_gcomp":
+                        colorCircle = "Olive";
+                        titleText = "Competencias Globales"
+                        break;
+                    case "MEANW_read":
+                        colorCircle = "DarkGreen";
+                        titleText = "Lectura Mujeres"
+                        break;
+                    case "MEANW_math":
+                        colorCircle = "DarkRed";
+                        titleText = "Matemáticas Mujeres"
+                        break;
+                    case "MEANW_science":
+                        colorCircle = "DarkBlue";
+                        titleText = "Ciencias Mujeres"
+                        break;
+                    case "MEANW_gcomp":
+                        colorCircle = "Olive";
+                        titleText = "Competencias Globales Mujeres"
+                        break;
+                    case "MEANM_read":
+                        colorCircle = "DarkGreen";
+                        titleText = "Lectura Hombres"
+                        break;
+                    case "MEANM_math":
+                        colorCircle = "DarkRed";
+                        titleText = "Matemáticas Hombres"
+                        break;
+                    case "MEANM_science":
+                        colorCircle = "DarkBlue";
+                        titleText = "Ciencias Hombres"
+                        break;
+                    case "MEANM_gcomp":
+                        colorCircle = "Olive";
+                        titleText = "Competencias Globales Hombres"
+                        break;
                     case "MEANDIFF_read":
                         colorCircle = "DarkGreen";
                         titleText = "Diferencia Lectura"
@@ -235,6 +275,10 @@
                     case "MEANDIFF_science":
                         colorCircle = "DarkBlue";
                         titleText = "Diferencia Ciencias"
+                        break;
+                    case "MEANDIFF_gcomp":
+                        colorCircle = "Olive";
+                        titleText = "Diferencia Competencias Globales"
                         break;
 
 
