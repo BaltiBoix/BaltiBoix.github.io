@@ -1,5 +1,5 @@
-<h2>Práctica de la asignatura de Visualización de datos</h2>
-<h3>Creación de una visualización data storytelling (PRAC)</h3>
+<h2>[A9: Creación de la visualización y entrega del proyecto (Práctica)</h2>
+<h3>Visualización data storytelling (PRAC)</h3>
 
 1.	**Título y descripción de la visualización creada.**<br>
 La perspectiva de género en los resultados del estudio PISA para España. ¿Por qué no destacan las mujeres en matemáticas?
@@ -17,9 +17,9 @@ Se ha programado con d3.js una gráfica interactiva(lollipop) para presentar los
 
 4.	**Presentación de la navegación / animación de la visualización creada.**<br>
 Tableau:<br>
-<a href="https://public.tableau.com/app/profile/baltasar.boix/viz/PISA_2_16383060898200/Historia1?publish=yes">La perspectiva de género en los resultados del estudio PISA para España</a><br>
-d3.js:<br>
-<a href="https://baltiboix.github.io/Visual_PRAC/ccaa.html">Resultados PISA 2018 por Comunidad Autónoma</a>
+>> <a href="https://public.tableau.com/app/profile/baltasar.boix/viz/PISA_2_16383060898200/Historia1?publish=yes">La perspectiva de género en los resultados del estudio PISA para España</a><br>
+ d3.js:<br>
+>> <a href="https://baltiboix.github.io/Visual_PRAC/ccaa.html">Resultados PISA 2018 por Comunidad Autónoma</a>
 
 5.	**Análisis de los elementos visuales usados: tipo de gráficos, interacción, colores, textos...**<br>
 Se han utilizado los siguientes elementos visuales en Tableau:<br>
