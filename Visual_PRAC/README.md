@@ -1,10 +1,10 @@
 <h2>Práctica de la asignatura de Visualización de datos</h2>
 <h3>Creación de una visualización data storytelling (PRAC)</h3>
 
-1.	[**Título y descripción de la visualización creada.**<br>
+1.	**Título y descripción de la visualización creada.**<br>
 La perspectiva de género en los resultados del estudio PISA para España. ¿Por qué no destacan las mujeres en matemáticas?
 
-2.	[**Origen y licencia de los datos.**<br>
+2.	**Origen y licencia de los datos.**<br>
 He decidido utilizar los datos del estudio PISA  2018.   Es un estudio de la OCDE sobre el nivel educativo de los estudiantes de 15 años.
 Los datos se han descargado desde Pisa 2018 Database.
 Student questionnaire data file  (489  MB) en formato SPSS (TM) Data Files (compressed).
