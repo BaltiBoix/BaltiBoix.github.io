@@ -1,4 +1,4 @@
-<h2>[A9: Creación de la visualización y entrega del proyecto (Práctica)</h2>
+<h2>A9: Creación de la visualización y entrega del proyecto (Práctica)</h2>
 <h3>Visualización data storytelling (PRAC)</h3>
 
 1.	**Título y descripción de la visualización creada.**<br>
